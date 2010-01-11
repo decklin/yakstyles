@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<style>
+body {
+    width: 42em;
+    margin: auto;
+}
+</style>
+<script>
+function init() {
+    var extID = chrome.extension.getURL('').substr(19,32);
+    document.getElementById('extID').innerText = extID;
+}
+</script>
+<title>Styling Instructions</title>
+</head>
+<body onload="init();">
+  <h1>/usr/local/styles</h1>
+    <p>This extension does <strong>NOT</strong> have a UI for editing
+    styles; it's for people who want to use their text editor. If you
+    would prefer to edit styles on this page, <a href=
+    "https://chrome.google.com/extensions/detail/pabfempgigicdjjlccdgnbmeggkbjdhd">ChromeStylist</a>
+    is a great and easy-to-use extension. If you want to take the red
+    pill, read on...</p>
+
+  <h2>Where to find your userstyles</h2>
+  <ol>
+    <li>Refer to <a href=
+      "http://dev.chromium.org/user-experience/user-data-directory">this
+    page</a> to locate your user data directory.</li>
+    <li>Within that directory, open the directory for this
+    extension: <kbd>Extensions/<span id="extID">xxx</span></kbd></li>
+    <li>Inside that one, open the directory for the latest version
+    (currently <kbd>1.2</kbd>)</li>
+    <li>In <em>that</em> directory, you will see a directory
+    named <kbd>styles</kbd></li>
+    <li>Create a symlink or shortcut to this directory
+    from a more convenient location.</a>
+  </ol>
+  <h2>Editing</h2>
+    <p>Three styles will be loaded for each page: <kbd>__all__.css</kbd>
+    (put any styles you want applied to every site here), one for
+    the domain, minus any leading "www." (<kbd>example.com.css</kbd>),
+    and one for the specific page. For the latter, use subdirectories
+    to match the path of the page you want to style
+    (e.g. <kbd>google.com/calendar/render.css</kbd>).</p>
+</body>
+</html>
