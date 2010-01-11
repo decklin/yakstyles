@@ -1,15 +1,10 @@
 {
-  "name": "/usr/local/styles",
-  "version": "1.2",
-  "description": "Local-file user stylesheet hack",
-  "options_page": "options.html",
-  "icons": {
-    "32": "folder-style-32.png",
-    "48": "folder-style-48.png"
-  },
+  "name": "YakStyles",
+  "version": "1.0",
+  "description": "Load faux user stylesheets from YakServer",
   "content_scripts": [
     {
-      "js": [ "usr-local-styles.js" ],
+      "js": [ "yakstyles.js" ],
       "matches": [ "http://*/*", "https://*/*" ],
       "run_at": "document_start"
     }
